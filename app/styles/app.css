@@ -1,9 +1,14 @@
-li.available {
+.available {
   text-decoration: underline;
 }
 
-li.not-available {
+.not-available {
   color: grey;
+}
+
+li.not-available a {
+  color: grey;
+  text-decoration: line-through;
 }
 
 .flex-container {
@@ -13,4 +18,44 @@ li.not-available {
 
 .flex-item {
   padding: 10px;
+}
+
+.medium-text-area {
+  height: 50px;
+  width: 300px
+}
+
+.chef-list .title-bar {
+  font-size: 1.3em;
+}
+
+.chef-list .description {
+  padding: 10px;
+
+}
+
+.chef-list {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 4px;
+  margin: 5px;
+}
+
+.pull-right {
+  float: right;
+}
+
+.img-icon {
+  max-width: 64px;
+  max-height: 64px;
+  padding: 5px;
+}
+
+.img-large {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.pull-left {
+  float: left;
 }

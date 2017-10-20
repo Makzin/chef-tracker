@@ -1,0 +1,24 @@
+
+<div class="chef-list {{if chef.isCooking '' 'not-available'}}">
+  <div {{action 'toggleOpen'}} class='title-bar'>
+    {{chef.name}}
+    <span class='pull-right'>{{if isOpen 'V' '>'}}</span>
+  </div>
+  {{#if isOpen}}
+    {{icon-image chef.imageURL left=true}}
+    <div class='description'>{{chef.description}}</div>
+    {{#link-to 'chefs.chef' chef}}<button>Show</button>{{/link-to}}
+    {{#link-to 'chefs.chef.edit' chef.id}}<button>Edit</button>{{/link-to}}
+    {{#if chef.isCooking}}
+      <button {{action 'toggleChef' chef}}>Exit</button>
+      <p>Number of students:
+        <button {{action 'removeStudent' chef}}>-</button>
+        {{chef.numberOfStudents}}
+        <button {{action 'addStudent' chef}}>+</button></p>
+      <button {{action 'fireChef' chef}}>Fire Chef</button>
+    {{else}}
+      <button {{action 'toggleChef' chef}}>Enter</button>
+      <p>Number of students: {{chef.numberOfStudents}}</p>
+    {{/if}}
+  {{/if}}
+</div>

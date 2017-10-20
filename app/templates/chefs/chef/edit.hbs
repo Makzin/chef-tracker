@@ -1,0 +1,14 @@
+<img class='img-icon' src='{{model.imageURL}}' />
+<p>Name:</p>
+{{input value=model.name}}
+<p>Description:</p>
+{{textarea value=model.description class='medium-text-area'}}
+
+<p>Image URL: {{input type='text' value=model.imageURL}}</p>
+<p>{{input type="checkbox" name="culinarySchool" checked=model.hasAttendedCulinarySchool}}
+Has attended Culinary School</p>
+{{#if model.hasAttendedCulinarySchool}}
+  <p>Culinary School Attended: {{input type="text" value=model.culinarySchoolName}}</p>
+{{/if}}
+
+<button {{action 'save'}}>Save</button>

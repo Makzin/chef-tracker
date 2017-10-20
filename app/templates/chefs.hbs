@@ -6,24 +6,10 @@
     <p>Our {{chefRoster}} chefs teach {{totalStudents}} students</p>
 
     {{#each model as |chef|}}
-      {{#if chef.isCooking}}
-        <li class='available'>
-          {{#link-to 'chefs.chef' chef}}{{chef.name}}{{/link-to}}
-          <button {{action 'exit' chef}}>Exit</button></li>
-          <p>Number of students:
-            <button {{action 'removeStudent' chef}}>-</button>
-            {{chef.numberOfStudents}}
-            <button {{action 'addStudent' chef}}>+</button></p>
-      {{else}}
-        <li class='not-available'><s>
-        {{chef.name}}
-        <button {{action 'enter' chef}}>Enter</button>
-        <button {{action 'fireChef' chef}}>Fire Chef</button>
-        <p>Number of students: {{chef.numberOfStudents}}</p>
-      </s></li>
-      {{/if}}
+      {{chef-list chef=chef}}
     {{/each}}
     <hr>
+
     {{input value=newChef}}
     <button {{action 'hireNewChef'}}>Hire Chef</button>
     </div>
